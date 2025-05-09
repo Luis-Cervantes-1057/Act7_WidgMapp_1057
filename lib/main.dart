@@ -1,43 +1,34 @@
+import 'package:act7_mapp_1057/wid16.dart';
+import 'package:act7_mapp_1057/wid24.dart';
+import 'package:act7_mapp_1057/wid32.dart';
+import 'package:act7_mapp_1057/wid40.dart';
+import 'package:act7_mapp_1057/wid48.dart';
+import 'package:act7_mapp_1057/wid8.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import 'PagInical.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+void main() => runApp(Mapp());
+
+class Mapp extends StatelessWidget {
+  const Mapp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Rutas Entre Paginas',
+        initialRoute: '/',
+        routes: {
+          // When navigating to the "/" route, build the FirstScreen widget.
+          '/': (context) => const PagInicial(),
+          // When navigating to the "/second" route, build the SecondScreen widget.
+          '/8': (context) => const Widget008(),
+          '/16': (context) => const Widget016(),
+          '/24': (context) => const Widget024(),
+          '/32': (context) => const Widget032(),
+          '/40': (context) => const Widget040(),
+          '/48': (context) => const Widget051(),
+        });
   }
 }
